@@ -1,6 +1,6 @@
 # Event Management Frontend
 
-A **Nuxt.js 3** frontend for a **multi-tenant event management system**, built with **TypeScript**, **Tailwind CSS**, and **Pinia**. Integrates with a **Laravel API** to manage events and attendees.
+A **Nuxt.js 3** frontend for a **multi-tenant event management system**, built with **TypeScript**, **Tailwind CSS**, and **Pinia**. This app consumes a **Laravel API** to manage events and attendees.
 
 ## 🔧 Features
 
@@ -15,8 +15,8 @@ A **Nuxt.js 3** frontend for a **multi-tenant event management system**, built w
 ## ✅ Prerequisites
 
 - **Node.js** `v18+`
-- Backend Laravel API: [`multi-tenant-event_manager`](https://github.com/Clifford537/event-management-backend)  
-  Make sure the Laravel API is running at: `http://127.0.0.1:8000`
+- Backend Laravel API must be running: [`event-management-backend`](https://github.com/Clifford537/event-management-backend)  
+  > ⚠️ Ensure the backend is running at `http://127.0.0.1:8000` before starting the frontend.
 
 ---
 
@@ -43,7 +43,7 @@ Copy the example file and update as needed:
 cp .env.example .env
 ```
 
-Ensure `API_BASE_URL` is correctly pointing to your Laravel backend:
+Update the API URL if needed:
 
 ```env
 API_BASE_URL=http://127.0.0.1:8000/api
@@ -55,12 +55,12 @@ API_BASE_URL=http://127.0.0.1:8000/api
 npm run dev
 ```
 
-Navigate to: `http://localhost:3000`
+Access the frontend at: `http://localhost:3000`
 
 ---
 
 ## 🧠 Notes
 
-- **Multi-tenancy**: Use URLs like `/org1/events`, `/org2/events`, etc., to scope each tenant.
-- **Backend repo**: [event-management-backend](https://github.com/Clifford537/event-management-backend)
-- Use Laravel's `sanctum` for auth and CSRF protection in production.
+- **Multi-tenancy**: Use routes like `/org1/events`, `/org2/events`, etc., to scope each tenant.
+- This frontend expects a Laravel API backend with routes protected using Laravel Sanctum.
+- Backend repo: [event-management-backend](https://github.com/Clifford537/event-management-backend)
